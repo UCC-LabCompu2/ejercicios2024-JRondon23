@@ -142,8 +142,8 @@ function cargarlocalstorage() {
     document.getElementById("dist").value = cantidad + " " + unidad;
 }
 
-function dibujarcircuat() {
-    document.getElementById("myCanvas");
+function dibujarcircuad() {
+    var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     var ymax = canvas.height;
     var margen = 5;

@@ -109,3 +109,19 @@ function calculardivision() {
     num2 = document.getElementsByName("div_num2")[0].value;
     document.getElementsByName("div_total")[0].innerHTML = num1 / Number(num2);
 }
+
+function cargarweb() {
+    var can, unidad, urlcomp;
+    can = document.getElementById("distancia").value;
+    unidad = document.getElementsByName("unidades")[0].value;
+    urlcomp = "segundaWeb.html#" + can + "#" + unidad;
+    window.open(urlcomp);
+}
+
+function cargarresultado() {
+    var urlcomp, can, un;
+    urlcomp = window.location.href.split("/")[5];
+    can = urlcomp.split("#")[1];
+    un = urlcomp.split("#")[2];
+    document.getElementById("dist").value = can + " " + un;
+}

@@ -1,9 +1,9 @@
 /**
- * Descripción
- * @method Nombre de la función
- * @param Parámetro A
- * @param Parámetro B
- * @return Valor que retorna
+ * Conversion de unidades
+ * @method cambiarunidades
+ * @param {string} id- El id de los imputs
+ * @param {number} valor- el valor de los imputs
+ * @return
  */
 function cambiarunidades(id, valor) {
     if (isNaN(valor)) {

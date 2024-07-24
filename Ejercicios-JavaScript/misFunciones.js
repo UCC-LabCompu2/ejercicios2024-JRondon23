@@ -221,3 +221,14 @@ function dibujarcuadriculado() {
     ctx.closePath();
 
 }
+
+function dibujarimagen(posx, posy) {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var img = new Image();
+    canvas.width = canvas.width;
+    img.src = "images/auto.png";
+    img.onload = function () {
+        ctx.drawImage(img, posx, posy);
+    }
+}

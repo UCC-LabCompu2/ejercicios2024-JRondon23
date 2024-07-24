@@ -1,8 +1,8 @@
 /**
  * Conversion de unidades
  * @method cambiarunidades
- * @param {string} id- El id de los imputs
- * @param {number} valor- el valor de los imputs
+ * @param {string} id- El id de los inputs
+ * @param {number} valor- el valor de los inputs
  * @return
  */
 function cambiarunidades(id, valor) {
@@ -29,4 +29,23 @@ function cambiarunidades(id, valor) {
         document.lasunidades.unid_pie.value = 3 * valor;
         document.lasunidades.unid_metro.value = 0.914 * valor;
     }
+}
+
+/**
+ * Conversion de grados y radianes
+ * @method convertirGR
+ * @param {string} id- El id de los inputs
+ * @return
+ */
+function convertirGR(id) {
+    var grad, rad;
+    if (id === "grados") {
+        grad = document.getElementById("grados").value;
+        rad = (grad * Math.PI) / 180;
+    } else if (id === "radianes") {
+        rad = document.getElementById("radianes").value;
+        grad = (rad * 180) / Math.PI;
+    }
+    document.getElementById("grados").value = grad;
+    document.getElementById("radianes").value = rad;
 }

@@ -232,3 +232,21 @@ function dibujarimagen(posx, posy) {
         ctx.drawImage(img, posx, posy);
     }
 }
+
+var x = 0;
+var dx = 2;
+
+function animarauto() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var img = new Image();
+    canvas.width = canvas.width;
+    img.src = "images/auto.png";
+    img.onload = function () {
+        ctx.drawImage(img, x, 100);
+    }
+    if (x > canvas.width) {
+        x = 0;
+    }
+    x += dx;
+}

@@ -1,8 +1,8 @@
 /**
  * Conversion de unidades
  * @method cambiarunidades
- * @param {string} id- El id de los inputs
- * @param {number} valor- el valor de los inputs
+ * @param {string} id - El id de los inputs
+ * @param {number} valor - el valor de los inputs
  * @return
  */
 function cambiarunidades(id, valor) {
@@ -34,7 +34,7 @@ function cambiarunidades(id, valor) {
 /**
  * Conversion de grados y radianes
  * @method convertirGR
- * @param {string} id- El id de los inputs
+ * @param {string} id - El id de los inputs
  * @return
  */
 function convertirGR(id) {
@@ -48,4 +48,19 @@ function convertirGR(id) {
     }
     document.getElementById("grados").value = grad;
     document.getElementById("radianes").value = rad;
+}
+
+/**
+ * Muestra y oculta el div
+ * @method mostrar_ocultar
+ * @param {string} valormo - El valor de los inputs
+ * @return
+ */
+
+function mostrar_ocultar(valormo) {
+    if (valormo === "val_mostrar") {
+        document.getElementById("divmo").style.display = 'block';
+    } else if (valormo === "val_ocultar") {
+        document.getElementById("divmo").style.display = 'none';
+    }
 }

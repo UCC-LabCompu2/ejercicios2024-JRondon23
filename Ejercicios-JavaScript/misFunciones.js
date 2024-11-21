@@ -235,6 +235,7 @@ function dibujarimagen(posx, posy) {
 
 var x = 0;
 var dx = 2;
+var animationId;
 
 function animarauto() {
     var canvas = document.getElementById("myCanvas");
@@ -244,7 +245,7 @@ function animarauto() {
     img.onload = function () {
         canvas.width = canvas.width;
         ctx.drawImage(img, x, 100);
-        requestAnimationFrame(animarauto);
+        animationId=requestAnimationFrame(animarauto);
     }
     if (x > canvas.width) {
         x = 0;
@@ -253,5 +254,10 @@ function animarauto() {
     x += dx;
 }
 let animarNuevo = () => {
+    setTimeout(cancelarAnimacion,6000);
     requestAnimationFrame(animarauto);
+}
+let cancelarAnimacion = ()=>{
+    cancelAnimationFrame(animationId);
+
 }

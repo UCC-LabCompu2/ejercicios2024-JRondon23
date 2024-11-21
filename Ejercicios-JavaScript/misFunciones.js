@@ -240,25 +240,18 @@ function animarauto() {
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     var img = new Image();
-    canvas.width = canvas.width;
     img.src = "images/auto.png";
     img.onload = function () {
+        canvas.width = canvas.width;
         ctx.drawImage(img, x, 100);
+        requestAnimationFrame(animarauto);
     }
     if (x > canvas.width) {
         x = 0;
+
     }
     x += dx;
 }
-var intervalId;
-let detenerAuto = () => {
-    console.log("Se detuvo el auto")
-    clearInterval(intervalId);
-}
-
-
-let comenzarAnimacion = () => {
-    console.log("Se llamo a comenzar animacion")
-    intervalId = setInterval(animarauto, 10);
-    setTimeout(detenerAuto, 6000);
+let animarNuevo = () => {
+    requestAnimationFrame(animarauto);
 }
